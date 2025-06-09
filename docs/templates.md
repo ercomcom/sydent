@@ -2,7 +2,7 @@
 
 Sydent uses parametrised templates to generate the content of emails it
 sends and webpages it shows to users. Example templates can be found in
-the [res](https://github.com/matrix-org/sydent/tree/main/res) folder.
+the [res](https://github.com/element-hq/sydent/tree/main/res) folder.
 
 ## Branding
 

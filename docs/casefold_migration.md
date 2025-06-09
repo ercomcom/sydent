@@ -21,7 +21,7 @@ using variations of the same address with a different case). This means some add
 your identity server's database might not have been stored in a format that allows for
 case-insensitive processing, or might have duplicate associations.
 
-To correct this, Sydent 2.4.0 introduces a [script](https://github.com/matrix-org/sydent/blob/main/scripts/casefold_db.py)
+To correct this, Sydent 2.4.0 introduces a [script](https://github.com/element-hq/sydent/blob/main/scripts/casefold_db.py)
 that inspects an identity server's database and fixes it to be compatible with this change:
 
 ```
@@ -37,7 +37,7 @@ keeps the most recent association and deletes the others. If one or more of the 
 user IDs that are being dissociated don't match the one being kept, the script also sends an
 email to the address to inform the user of the dissocation.
 
-The default template for this email can be found [here](https://github.com/matrix-org/sydent/blob/main/res/matrix-org/migration_template.eml.j2)
+The default template for this email can be found [here](https://github.com/element-hq/sydent/blob/main/res/matrix-org/migration_template.eml.j2)
 and can be overriden by configuring a custom template directory (by changing the
 `templates.path` configuration setting). The custom template must be named `migration_template.eml.j2`
 (or `migration_template.eml` if not using Jinja 2 syntax), and will be given the Matrix

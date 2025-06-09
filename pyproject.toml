@@ -2,7 +2,7 @@
     package = "sydent"
     filename = "CHANGELOG.md"
     directory = "changelog.d"
-    issue_format = "[\\#{issue}](https://github.com/matrix-org/sydent/issues/{issue})"
+    issue_format = "[\\#{issue}](https://github.com/element-hq/sydent/issues/{issue})"
 
     [[tool.towncrier.type]]
         directory = "feature"
@@ -74,7 +74,7 @@ description = "Reference Matrix Identity Verification and Lookup Server"
 authors = ["Matrix.org Team and Contributors <packages@matrix.org>"]
 license = "Apache-2.0"
 readme = "README.rst"
-repository = "https://github.com/matrix-org/sydent"
+repository = "https://github.com/element-hq/sydent"
 packages = [
     { include = "sydent" },
 ]

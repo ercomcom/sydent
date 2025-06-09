@@ -27,7 +27,7 @@ pull_request_number="$1"
 
 # Print a link to the contributing guide if the user makes a mistake
 CONTRIBUTING_GUIDE_TEXT="!! Please see the contributing guide for help writing your changelog entry:
-https://github.com/matrix-org/sydent/blob/main/CONTRIBUTING.md#changelog"
+https://github.com/element-hq/sydent/blob/main/CONTRIBUTING.md#changelog"
 
 # If towncrier returns a non-zero exit code, print the contributing guide link and exit
 python -m towncrier.check --compare-with="origin/main" || (echo -e "$CONTRIBUTING_GUIDE_TEXT" >&2 && exit 1)
