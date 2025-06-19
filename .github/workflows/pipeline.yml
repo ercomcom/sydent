@@ -56,9 +56,6 @@ jobs:
       - name: Typechecking (mypy)
         run: poetry run mypy
 
-  packaging:
-    uses: "matrix-org/backend-meta/.github/workflows/packaging.yml@v1"
-
   docker:
     # Sanity check that we can build the x64 image
     runs-on: ubuntu-latest
@@ -78,7 +75,7 @@ jobs:
   run-tests:
     name: Tests
     if: ${{ !cancelled() && !failure() }} # Allow previous steps to be skipped, but not fail
-    needs: [check-newsfile, checks, packaging]
+    needs: [check-newsfile, checks]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -99,7 +96,6 @@ jobs:
     needs:
       - check-newsfile
       - checks
-      - packaging
       - run-tests
     runs-on: ubuntu-latest
     steps:
