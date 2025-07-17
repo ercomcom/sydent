@@ -126,7 +126,11 @@ def sendEmail(
         # failing it may munge the address it returns. So we should *not* use
         # that parsed address, as it may not match any validation done
         # elsewhere.
-        smtp.sendmail(mailFrom, mailTo, mailString.encode("utf-8"))
+        # Replace the line endings (typically "\n") with "\r\n" (CRLF) as required by email.
+        # This avoids "550 5.6.11 SMTPSEND.BareLinefeedsAreIllegal" errors when
+        # sending to strict mail servers.
+        mailStringCRLF = "\r\n".join(mailString.splitlines())
+        smtp.sendmail(mailFrom, mailTo, mailStringCRLF.encode("utf-8"))
         smtp.quit()
     except Exception as origException:
         if log_send_errors:
