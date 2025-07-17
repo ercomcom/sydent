@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.7', '3.11']
+        python-version: ['3.9', '3.11']
         test-dir: ['tests', 'matrix_is_tester']
 
     steps:
