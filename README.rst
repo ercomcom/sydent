@@ -30,31 +30,9 @@ To install Sydent's dependencies on a Debian-based system, run::
     sudo apt-get install build-essential python3-dev libffi-dev \
                          sqlite3 libssl-dev python3-virtualenv libxslt1-dev
 
-From here, you can either install Sydent by using a PyPI release, or by recreating Sydent's locked runtime environment.
-
-
-Installing the latest Sydent release from PyPI
-----------------------------------------------
-
-To create the virtual environment in which Sydent will run::
-
-    virtualenv -p python3 ~/.sydent
-    source ~/.sydent/bin/activate
-    pip install --upgrade pip
-    pip install --upgrade setuptools
-
-Sydent and its dependencies can be installed using ``pip`` by running::
-
-    pip install matrix-sydent
-    
-With the virtualenv activated, you can run Sydent using::
-
-    python -m sydent.sydent
-
 Installing from source
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Alternatively, Sydent can be installed using ``poetry`` from a local git checkout.
 First install `poetry`. See `poetry's documentation <https://python-poetry.org/docs/#installation>`_ for details; we recommend installing via `pipx`. Once that's done::
 
     git clone https://github.com/element-hq/sydent.git
@@ -119,6 +97,9 @@ Docker
 
 A Dockerfile is provided for sydent. To use it, run ``docker build -t sydent .`` in a sydent checkout.
 To run it, use ``docker run --env=SYDENT_SERVER_NAME=my-sydent-server -p 8090:8090 sydent``.
+
+Alternatively, to run with the prebuilt Docker image from Docker Hub, use
+``docker run --env=SYDENT_SERVER_NAME=my-sydent-server -p 8090:8090 matrixdotorg/sydent``.
 
 Persistent data
 ---------------
