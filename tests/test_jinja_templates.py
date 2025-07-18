@@ -214,5 +214,8 @@ class TestTemplate(unittest.TestCase):
         # remove the email headers as they are variable
         email_contents = email_contents[email_contents.index("Hello") :]
 
+        # strip incompatible whitespace
+        email_contents = email_contents.replace("\r", "")
+
         # test all ouput is as expected
         self.assertEqual(email_contents, expected_text)
