@@ -1,3 +1,30 @@
+Sydent 2.7.0 (2025-07-18)
+==========================
+
+This is the first Sydent release under an AGPLv3.0 licence (with CLA, for
+proprietary dual licensing). You can read more about this here:
+
+ - https://matrix.org/blog/2023/11/06/future-of-synapse-dendrite/
+ - https://element.io/blog/element-to-adopt-agplv3/
+
+Note that this release is not published on PyPI.  Running the prebuilt
+upstream Docker image at `matrixdotorg/sydent` is now the recommended way
+to deploy Sydent.
+
+Bugfixes
+--------
+
+- Prevent Sydent from overwriting user settings in the DEFAULT section upon startup. ([\#590](https://github.com/element-hq/sydent/issues/590))
+- Prevent bare line feed rejection errors by using CRLF line endings when sending emails. Contributed by @NICO-SOLUTIONS. ([\#596](https://github.com/element-hq/sydent/issues/596))
+
+
+Internal Changes
+----------------
+
+- Do not publish the release to PyPI.
+- Update README to describe how to run from the upstream prebuilt Docker image, and remove instructions for installing from PyPI.
+
+
 Sydent 2.6.1 (2023-11-20)
 =========================
 
